@@ -12,32 +12,29 @@ export default async function TopMenu() {
 
   return (
     <div className={styles.menucontainer}>
-      <div className={styles.rightsection}>
-         <div className={styles.authsection}>
-          {session ? (
-            <Link href="/api/auth/signout" className={styles.authlink}>
-              Sign-Out of {session.user?.name}
-            </Link>
-          ) : (
-            <Link href="/api/auth/signin" className={styles.authlink}>
-              Sign-In
-            </Link>
-          )}
-        </div>
-        <div className={styles.menuitems}>
-          <TopMenuItem title="Booking " pageRef="/booking" />
-          {/* <TopMenuItem title='About' pageRef='/about'/> */}
-        </div>
-        <Image
-          src={"/img/cover4.png"}
-          className={styles.logoimg}
-          alt="Logo"
-          width={0}
-          height={0}
-          sizes="100vh"
-        />
-       
+      <div className={styles.authsection}>
+        {session ? (
+          <Link href="/api/auth/signout" className={styles.authlink}>
+            Sign-Out of {session.user?.name}
+          </Link>
+        ) : (
+          <Link href="/api/auth/signin" className={styles.authlink}>
+            Sign-In
+          </Link>
+        )}
       </div>
+      <div className={styles.menuitems}>
+        <TopMenuItem title="Booking " pageRef="/booking" />
+        {/* <TopMenuItem title='About' pageRef='/about'/> */}
+      </div>
+      <Image
+        src={"/img/cover4.png"}
+        className={styles.logoimg}
+        alt="Logo"
+        width={0}
+        height={0}
+        sizes="100vh"
+      />
     </div>
 
     //         <div className={styles.menucontainer}>
