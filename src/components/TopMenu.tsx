@@ -1,7 +1,7 @@
 import styles from "./topmenu.module.css";
 import Image from "next/image";
 import TopMenuItem from "./TopMenuItem";
-import { getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth";
 import { authOptions } from "@/libs/authOptions";
 import Link from "next/link";
 

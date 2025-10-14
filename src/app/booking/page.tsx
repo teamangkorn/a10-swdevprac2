@@ -1,7 +1,7 @@
 import DateReserve from "@/components/DateReserve";
 import TextField from '@mui/material/TextField';
 import { Select, MenuItem } from "@mui/material";
-import { getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth";
 import { authOptions } from "@/libs/authOptions";
 import getUserProfile from "@/libs/getUserProfile";
 import { redirect } from "next/navigation";
