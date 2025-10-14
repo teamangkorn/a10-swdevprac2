@@ -1,0 +1,66 @@
+.menucontainer{
+    height: 50px;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 30;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    gap: 16px;
+}
+
+.logoimg{
+    height: 100%;
+    width: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.itemcontainer{
+    padding: 0 12px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+    color: grey;
+}
+
+.menuitems{
+    display: flex;
+    gap: 12px;
+}
+
+.authsection{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.authlink{
+    color: #0e7490;
+    font-size: 0.875rem;
+    text-decoration: none;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.authlink:hover{
+    text-decoration: underline;
+}
+
+.rightsection{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
