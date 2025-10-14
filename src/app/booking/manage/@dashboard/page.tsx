@@ -1,13 +1,20 @@
-import { getServerSession } from "next-auth"
-import { authOptions } from "@/libs/authOptions"
+import { getServerSession } from "next-auth/next"
+import type { Session } from "next-auth"
+import { authOptions, SessionUser } from "@/libs/authOptions"
 import getUserProfile from "@/libs/getUserProfile"
+
+function hasSessionUser(session: Session | null): session is Session & { user: SessionUser } {
+    return Boolean(session?.user && "token" in session.user && typeof session.user.token === "string");
+}
 
 export default async function DashboardPage(){
 
-    const session = await getServerSession(authOptions)
-    if(!session || !session.user.token) return null;
+    const session = await getServerSession(authOptions);
+    if (!hasSessionUser(session)) {
+        return null;
+    }
 
-    const profile = await getUserProfile(session.user.token)
+    const profile = await getUserProfile(session.user.token);
     var createdAt = new Date(profile.data.createdAt)
     
 
